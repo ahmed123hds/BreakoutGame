@@ -1,0 +1,3 @@
+/home/kodek/BreakoutGame/build/CMakeFiles/BreakoutGame.dir
+/home/kodek/BreakoutGame/build/CMakeFiles/edit_cache.dir
+/home/kodek/BreakoutGame/build/CMakeFiles/rebuild_cache.dir
