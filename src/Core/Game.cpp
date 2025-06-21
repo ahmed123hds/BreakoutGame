@@ -26,8 +26,17 @@ void Game::Initialize() {
     
     // Always recreate game objects and physics
     physicsEngine = std::make_unique<PhysicsEngine>();
-    paddle = std::make_unique<Paddle>(screenWidth / 2.0f - 50.0f, screenHeight - 50.0f);
-    ball = std::make_unique<Ball>(screenWidth / 2.0f, screenHeight / 2.0f);
+    //paddle = std::make_unique<Paddle>(screenWidth / 2.0f - 50.0f, screenHeight - 50.0f);
+    //ball = std::make_unique<Ball>(screenWidth / 2.0f, screenHeight / 2.0f);
+    
+    // (Re)create core game objects each time we initialize
+    paddle = std::make_unique<Paddle>(screenWidth / 2.0f - 50.0f,
+                                      screenHeight - 50.0f);
+    ball = std::make_unique<Ball>(screenWidth / 2.0f,
+                                  screenHeight / 2.0f);
+
+    paddle->Reset();
+    ball->Reset();
     
     // Reset ALL game state completely
     score = 0;
@@ -139,6 +148,7 @@ void Game::InitializeLevel() {
             }
             
             auto brick = std::make_unique<Brick>(x, y, brickWidth, brickHeight, type);
+            brick->Reset();
             bricks.push_back(std::move(brick));
         }
     }

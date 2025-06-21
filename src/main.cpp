@@ -11,6 +11,8 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
 int main() {
     glfwInit();
+    // Reset GLFW timer so deltaTime starts at 0 for every run
+    glfwSetTime(0.0);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -26,6 +28,9 @@ int main() {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetKeyCallback(window, key_callback);
+    
+    // Reset GLFW timer so deltaTime starts from zero each run
+    glfwSetTime(0.0);
 
     if (glewInit() != GLEW_OK) {
         std::cout << "Failed to initialize GLEW" << std::endl;
