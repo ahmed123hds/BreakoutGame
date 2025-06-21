@@ -19,7 +19,7 @@ BreakoutGame/
 │   │   └── Shader.cpp      # Shader management
 │   ├── Input/          # Input handling
 │   │   └── InputManager.cpp # Keyboard/mouse input
-│   ├── Physics/        # Physics engine (placeholder for your implementation)
+│   ├── Physics/        # Physics engine 
 │   │   └── PhysicsEngine.cpp # Collision detection and response
 │   └── main.cpp        # Application entry point
 ├── include/            # Header files (mirrors src structure)
